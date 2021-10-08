@@ -10,7 +10,7 @@ namespace KO.Service.Concrete
 {
     public class UserService : IUserService
     {
-        public object AddOrUpdate(User model)
+        public User AddOrUpdate(User model)
         {
             using var context = new EfContext();      
             var user = model.Id > 0 ? context.Users.FirstOrDefault(x => x.Id == model.Id) : new User();
@@ -18,8 +18,6 @@ namespace KO.Service.Concrete
             {
                 return null;
             }
-
-        
 
             user.Name = model.Name;
             user.Surname = model.Surname;
@@ -40,10 +38,10 @@ namespace KO.Service.Concrete
             return model;
         }
 
-        public object Get(string email, string password)
+        public User Get(string email, string password)
         {
             using var context = new EfContext();
-            var user = context.Users.Select(x => new
+            var user = context.Users.Select(x => new User
             {
                 Id = x.Id,
                 Name = x.Name,

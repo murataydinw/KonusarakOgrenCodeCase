@@ -43,7 +43,8 @@ namespace KO.Web
                 AppParameter.AppSettings.ConnectionString = "Data Source=D:\\dbKO.db";
             }
             services.AddScoped<IUserService, UserService>();
-
+            services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IExamService, ExamService>();
 
 
         }

@@ -1,0 +1,276 @@
+﻿@model DetailPageModel
+<section class="site-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-sm-10">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="page-title">Sınav Oluştur</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="page-block">
+
+                        <div class="block-body place-mark-area">
+                            <form asp-controller="Home" asp-action="SaveExam" method="post">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label>@Model.Exam.Title</label>                                                                                             
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">                                      
+                                        <article>
+                                            <p>
+                                                @Model.Exam.Body
+                                            </p>
+                                        </article>
+                                        <hr>
+                                    </div>
+
+                                    @*1*@
+                                <div class="block-body">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="QuestionOne" asp-for="@Model.Exam.QuestionOne" placeholder="Soru 1">
+                                        </div>
+                                    </div>
+                                    <div class="btn-group col-md-12" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-primary col-md-6">@Model.Exam.QOneAOne</button>
+                                        <button type="button" class="btn btn-primary col-md-6">@Model.Exam.QOneATwo</button>
+                                        <button type="button" class="btn btn-primary col-md-6">@Model.Exam.QOneAThree</button>
+                                        <button type="button" class="btn btn-primary col-md-6">@Model.Exam.QOneAFour</button>
+                                    </div>
+
+                                    
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4"></div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <select data-style="btn-select" asp-for="@Model.Exam.QOneTrue" name="QOneTrue" id="answerOption" data-size="5" class="selectpicker js-select-marker js-select-country">
+                                                        <option>Doğru Cevap Seç</option>
+                                                        <option value="a">A</option>
+                                                        <option value="b">B</option>
+                                                        <option value="c">C</option>
+                                                        <option value="d">D</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    @*1*@
+                                    @*2*@
+                                    <div class="block-body">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Soru 2" asp-for="@Model.Exam.QuestionTwo" name="QuestionTwo">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="A)" asp-for="@Model.Exam.QTwoAOne" name="QTwoAOne">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="B)" asp-for="@Model.Exam.QTwoATwo" name="QTwoATwo">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="C)" asp-for="@Model.Exam.QTwoAThree" name="QTwoAThree">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="D)" asp-for="@Model.Exam.QTwoAFour" name="QTwoAFour">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <select data-style="btn-select" asp-for="@Model.Exam.QTwoTrue" name="QTwoTrue" id="answerOption" data-size="5" class="selectpicker js-select-marker js-select-country">
+                                                            <option>Doğru Cevap Seç</option>
+                                                            <option value="a">A</option>
+                                                            <option value="b">B</option>
+                                                            <option value="c">C</option>
+                                                            <option value="d">D</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*2*@
+                                    @*3*@
+                                    <div class="block-body">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Soru 3" asp-for="@Model.Exam.QuestionThree" name="QuestionThree">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="A)" asp-for="@Model.Exam.QThreeAOne" name="QThreeAOne">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="B)" asp-for="@Model.Exam.QThreeATwo" name="QThreeATwo">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="C)" asp-for="@Model.Exam.QThreeAThree" name="QThreeAThree">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="D)" asp-for="@Model.Exam.QThreeAFour" name="QThreeAFour">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <select data-style="btn-select" id="answerOption" asp-for="@Model.Exam.QThreeTrue" name="QThreeTrue" data-size="5" class="selectpicker js-select-marker js-select-country">
+                                                            <option>Doğru Cevap Seç</option>
+                                                            <option value="a">A</option>
+                                                            <option value="b">B</option>
+                                                            <option value="c">C</option>
+                                                            <option value="d">D</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*3*@
+                                    @*4*@
+                                    <div class="block-body">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Soru 4" asp-for="@Model.Exam.QuestionFour" name="QuestionFour">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="A)" asp-for="@Model.Exam.QFourAOne" name="QFourAOne">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="B)" asp-for="@Model.Exam.QFourATwo" name="QFourATwo">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="C)" asp-for="@Model.Exam.QFourAThree" name="QFourAThree">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="D)" asp-for="@Model.Exam.QFourAFour" name="QFourAFour">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <select data-style="btn-select" id="answerOption" asp-for="@Model.Exam.QFourTrue" name="QFourTrue" data-size="5" class="selectpicker js-select-marker js-select-country">
+                                                            <option>Doğru Cevap Seç</option>
+                                                            <option value="a">A</option>
+                                                            <option value="b">B</option>
+                                                            <option value="c">C</option>
+                                                            <option value="d">D</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*4*@
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
+                                            <button type="submit" class="btn btn-primary btn-block text-uppercase">Kaydet</button>
+                                        </div>
+                                        <div class="col-md-4"></div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</section>
+<style>
+    .donate-now {
+        list-style-type: none;
+        margin: 25px 0 0 0;
+        padding: 0;
+    }
+
+        .donate-now li {
+            float: left;
+            margin: 0 5px 0 0;
+            width: 100px;
+            height: 40px;
+            position: relative;
+        }
+
+        .donate-now label, .donate-now input {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+            .donate-now input[type="radio"] {
+                opacity: 0.011;
+                z-index: 100;
+            }
+
+                .donate-now input[type="radio"]:checked + label {
+                    background: yellow;
+                }
+
+        .donate-now label {
+            padding: 5px;
+            border: 1px solid #CCC;
+            cursor: pointer;
+            z-index: 90;
+        }
+
+            .donate-now label:hover {
+                background: #DDD;
+            }
+</style>

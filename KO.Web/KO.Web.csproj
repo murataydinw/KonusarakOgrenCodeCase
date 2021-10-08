@@ -5,13 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KO.Service\KO.Service.csproj" />
-    <ProjectReference Include="..\KO.Utility\KO.Utility.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Shared\" />
-    <Folder Include="wwwroot\assets\" />
+    <ProjectReference Include="..\KO.Service\KO.Service.csproj" />
+    <ProjectReference Include="..\KO.Utility\KO.Utility.csproj" />
   </ItemGroup>
 
 </Project>

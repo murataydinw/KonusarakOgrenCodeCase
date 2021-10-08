@@ -7,7 +7,7 @@ namespace KO.Service.Abstract
 {
    public interface IUserService
     {
-        object Get(string email, string password);
-        object AddOrUpdate(User model);       
+        User Get(string email, string password);
+        User AddOrUpdate(User model);       
     }
 }

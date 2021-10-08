@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\KO.Dal\KO.Dal.csproj" />
     <ProjectReference Include="..\KO.Entities\KO.Entities.csproj" />
+    <ProjectReference Include="..\KO.Utility\KO.Utility.csproj" />
   </ItemGroup>
 
 </Project>

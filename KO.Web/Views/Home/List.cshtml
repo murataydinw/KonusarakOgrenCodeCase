@@ -1,0 +1,46 @@
+﻿@model ListPageModel
+    <section class="site-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-sm-10">
+                    <div class="page-header">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h1 class="page-title">Sınav Listesi</h1>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="profile-treatment-area-list">
+                            @foreach (var item in Model.Exams)
+                            {
+                                <div class="item">
+                                    <div class="item-body">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="label-icon"><i class="ic ic-notification"></i></div>
+                                                <div class="block">
+                                                    <div class="label-value">@item.Title</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="block border-left text-center">
+                                                    <div class="label-value">@item.CreatedDate</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-btn"><a href="/exams/@item.Id" class="btn btn-primary-o btn-bold btn-sm text-uppercase">Sınava Git</a><a href="#" class="btn btn-primary-o btn-bold btn-sm text-uppercase">Sil</a></div>
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </section>

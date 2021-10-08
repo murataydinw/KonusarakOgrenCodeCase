@@ -6,9 +6,9 @@ namespace KO.Dal.EntityFramework
 {
     public class EfContext : DbContext
     {
+        public DbSet<Article> Articles { get; set; }
         public DbSet<User> Users { get; set; }
-
-
+        public DbSet<Exam> Exams { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
