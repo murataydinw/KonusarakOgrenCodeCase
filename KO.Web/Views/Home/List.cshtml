@@ -32,12 +32,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item-btn"><a href="/exams/@item.Id" class="btn btn-primary-o btn-bold btn-sm text-uppercase">Sınava Git</a><a href="#" class="btn btn-primary-o btn-bold btn-sm text-uppercase">Sil</a></div>
+                                    <div class="item-btn"><a href="/exams/@item.Id" class="btn btn-primary-o btn-bold btn-sm text-uppercase">Sınava Git</a><a href="/exams/delete/@item.Id" class="btn btn-primary-o btn-bold btn-sm text-uppercase">Sil</a></div>
                                 </div>
                             }
-
-
                         </div>
+                        @if (!string.IsNullOrEmpty(Model.Message))
+                        {
+                            <div class="alert alert-success">
+                                <p><b>@Model.Message!</b></p>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-md-1"></div>

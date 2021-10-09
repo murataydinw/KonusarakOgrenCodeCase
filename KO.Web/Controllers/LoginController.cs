@@ -13,9 +13,11 @@ namespace KO.Web.Controllers
     public class LoginController : BaseWebController
     {
         private readonly IUserService _userService;
-        public LoginController(IUserService userService)
+        private readonly IArticleService _articleService;
+        public LoginController(IUserService userService, IArticleService articleService)
         {
             _userService = userService;
+            _articleService = articleService;
         }
         [Route("login")]
         public IActionResult Index()
@@ -47,6 +49,7 @@ namespace KO.Web.Controllers
 
                 };
                 HttpContext.Session.SetSession("UserSession", userSession);
+                _articleService.ArticleImport();
             }
 
 

@@ -10,6 +10,33 @@ namespace KO.Service.Concrete
 {
     public class ExamService : IExamService
     {
+        public bool Delete(int Id)
+        {
+            using var context = new EfContext();
+            var model = context.Exams.FirstOrDefault(x => x.Id == Id);
+            if(model!=null)
+            {
+                context.Exams.Remove(model);
+                context.SaveChanges();
+                return true;
+            }
+           
+            return false;
+        }
+
+        public object ExamResult(int Id)
+        {
+            using var context = new EfContext();
+            var model = context.Exams.Where(x => x.Id == Id).Select(x => new
+            {
+                x.QOneTrue,
+                x.QTwoTrue,
+                x.QThreeTrue,
+                x.QFourTrue
+            }).ToList();
+            return model;
+        }
+
         public Exam Get(int Id)
         {
             using var context = new EfContext();
@@ -88,7 +115,7 @@ namespace KO.Service.Concrete
         {
             using var context = new EfContext();
             var model = new Exam();
-            
+
             model.Title = command.Title;
             model.Body = command.Body;
             model.QuestionOne = command.QuestionOne;
@@ -114,7 +141,7 @@ namespace KO.Service.Concrete
             model.QFourATwo = command.QFourATwo;
             model.QFourAThree = command.QFourAThree;
             model.QFourAFour = command.QFourAFour;
-            model.QFourTrue = command.QFourTrue;           
+            model.QFourTrue = command.QFourTrue;
             model.CreatedDate = DateTime.Now.ToString();
 
             context.Exams.Add(model);

@@ -40,7 +40,7 @@ namespace KO.Web
             AppParameter.AppSettings = options;
             if (AppParameter.AppSettings != null)
             {
-                AppParameter.AppSettings.ConnectionString = "Data Source=D:\\dbKO.db";
+                AppParameter.AppSettings.ConnectionString = "Data Source=./dbKO.db";
             }
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IArticleService, ArticleService>();

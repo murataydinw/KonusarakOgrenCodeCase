@@ -43,6 +43,19 @@ namespace KO.Web.Controllers
             return View(model);
         }
 
+        [Route("/exams/delete/{id}")]
+        public IActionResult Delete(int Id)
+        {
+            var model = new ListPageModel();
+            var result = _examService.Delete(Id);
+            if(result=true)
+            {
+                model.Message = "Silme İşlemi Başarılı";
+            }
+            
+            model.Exams = _examService.GetList();
+            return View("List",model);
+        }
         [Route("/exams/{Id}")]
         public IActionResult Detail(int Id)
         {
@@ -57,6 +70,6 @@ namespace KO.Web.Controllers
             var a = _examService.Save(model);
             return Redirect("/exams");
         }
-      
+            
     }
 }

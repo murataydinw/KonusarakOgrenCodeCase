@@ -9,5 +9,6 @@ namespace KO.Web.ViewModels
     public class ListPageModel
     {
         public List<Exam> Exams { get; set; }
+        public string Message { get; set; }
     }
 }
